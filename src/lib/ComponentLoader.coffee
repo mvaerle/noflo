@@ -31,6 +31,9 @@ class ComponentLoader
     for dependency of definition.dependencies
       @getModuleComponents dependency.replace '/', '-'
 
+    for local of definition.local
+      @getModuleComponents local
+
     return unless definition.noflo
 
     prefix = @getModulePrefix definition.name
